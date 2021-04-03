@@ -9,9 +9,27 @@ const sleep = time =>
   });
 
 const getExampleData = () => {
-  return axios
-    .get(`https://jsonplaceholder.typicode.com/photos?albumId=1`)
-    .then(response => response.data);
+  const token = localStorage.getItem('token');
+  console.log('tokeN:: ', token);
+  return (
+    axios
+      // .get(`https://jsonplaceholder.typicode.com/photos?albumId=1`)
+      .get(
+        // process.env.NODE_ENV === 'production'
+        //   ? 'https://web39mytechstuff.herokuapp.com/api/login'
+        //   : 'http://localhost:2019/api/rentals',
+        // {
+        'https://web39mytechstuff.herokuapp.com/api/rentals',
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then(res => res.data)
+      .catch(err => console.log('err: ', err))
+  );
 };
 
 const getAuthHeader = authState => {

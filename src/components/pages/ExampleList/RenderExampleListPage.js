@@ -1,17 +1,25 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 const RenderExampleListPage = props => (
-  <div>
-    {props.data.map(item => (
-      <figure key={item.id}>
-        <img src={item.thumbnailUrl} alt={item.title} />
-        <figcaption>
-          <h3>{item.title}</h3>
-        </figcaption>
-      </figure>
-    ))}
-  </div>
+  <>
+    <h1>Tech Stuff for Rent</h1>
+    <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
+      {props.data.map(rental => (
+        <figure
+          key={rental.rental_id}
+          style={{ maxWidth: '300px', margin: '0 auto' }}
+        >
+          <img src={rental.image} alt={rental.name} />
+          <h2>{rental.name}</h2>
+          <figcaption>
+            <h3>{rental.description}</h3>
+            <h3>Price per day: {rental.price_per_day}</h3>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </>
 );
 
 export default RenderExampleListPage;
@@ -21,8 +29,6 @@ RenderExampleListPage.propTypes = {
   data: PropTypes.arrayOf(
     // Here is an example of enforcing an object structure that we expect to receive in our props:
     PropTypes.shape({
-      // Here we require an id of type number or string to prevent a "unique key prop" warning
-      id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
       title: PropTypes.string,
       url: PropTypes.string,
       thumbnailUrl: PropTypes.string,
