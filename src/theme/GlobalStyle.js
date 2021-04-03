@@ -91,7 +91,6 @@ const reset = css`
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
   }
   /* HTML5 display-role reset for older browsers */
@@ -109,7 +108,6 @@ const reset = css`
     display: block;
   }
   body {
-    font-family: 'B612 mono';
     line-height: 1;
   }
   ol,
@@ -135,8 +133,7 @@ const reset = css`
 
 const global = css`
   * {
-    @import url('https://fonts.googleapis.com/css2?family=B612+Mono&display=swap');
-    font-family: B612 mono;
+    font-family: 'Blinker', sans-serif;
     box-sizing: border-box;
     max-width: 100%;
   }
@@ -147,9 +144,28 @@ const global = css`
     /* root font-size */
     font-size: 62.5%;
   }
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3.5rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+  }
+
+  h4 {
+    font-size: 2.5rem;
+  }
+
+  h5 {
+    font-size: 2rem;
+  }
 
   body {
-    font-size: 1.6rem;
+    font-size: 1.6rem; // 16px
   }
 `;
 

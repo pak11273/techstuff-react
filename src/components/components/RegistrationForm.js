@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 //styling start
 const StyledDiv = styled.div`
@@ -17,7 +17,7 @@ const StyledDiv = styled.div`
 
 const StyledRegistrationForm = styled.form`
   font-size: 1rem;
-  font-family: "B612 mono";
+  font-family: 'Blinker' sans-serif;
 `;
 
 const Inputs = styled.div`
@@ -38,7 +38,7 @@ const ButtonStyled = styled.button`
   margin: 3rem 10rem 3rem 10rem;
   padding: 0.8rem;
   font-size: 1.4rem;
-  font-family: "B612 mono";
+  font-family: 'Blinker' sans-serif;
   border: solid 5px #6943d5;
   border-radius: 20%20%;
   color: #6943d5;
@@ -51,13 +51,13 @@ const ErrorMessage = styled.p`
 `;
 //styling end
 
-const RegistrationForm = (props) => {
+const RegistrationForm = props => {
   const { values, submit, change, errors, disabled } = props;
-  const onSubmit = (evt) => {
+  const onSubmit = evt => {
     evt.preventDefault();
     submit();
   };
-  const onChange = (evt) => {
+  const onChange = evt => {
     const { name, value } = evt.target;
     change(name, value);
   };

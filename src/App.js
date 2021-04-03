@@ -1,5 +1,3 @@
-// import './App.css';
-
 import { Route, Switch } from 'react-router-dom';
 import { applyMiddleware, createStore } from 'redux';
 import { initialState, reducer } from './reducer';
