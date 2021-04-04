@@ -9,6 +9,8 @@ export const StyledDiv = styled.div`
   margin: 0;
   color: white;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 
   .avoidwrap {
     display: inline-block;

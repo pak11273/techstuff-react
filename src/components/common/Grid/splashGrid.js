@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const SplashGrid = styled.div`
+  height: 100%;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto;

@@ -71,19 +71,15 @@ const Login = props => {
   }, [formValues]);
 
   return (
-    <>
-      <div>
-        <StyledDiv>
-          <LoginForm
-            values={formValues}
-            change={inputChange}
-            submit={formSubmit}
-            disabled={disabled}
-            errors={formErrors}
-          />
-        </StyledDiv>
-      </div>
-    </>
+    <StyledDiv>
+      <LoginForm
+        values={formValues}
+        change={inputChange}
+        submit={formSubmit}
+        disabled={disabled}
+        errors={formErrors}
+      />
+    </StyledDiv>
   );
 };
 

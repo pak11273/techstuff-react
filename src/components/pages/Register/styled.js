@@ -1,24 +1,24 @@
 import styled from 'styled-components';
 
-export const StyledLoginForm = styled.form`
+export const StyledRegistrationForm = styled.form`
+  margin: 0 auto;
   background-color: white;
   border-radius: 20%;
   opacity: 0.7;
   padding: 20px;
   width: 60%;
-  margin: 0 auto;
   color: ${props => props.theme.colors.medBlue};
   min-width: 230px;
   max-width: 420px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   font-size: 2rem;
+  margin: 40px auto;
 
-  h1 {
+  h2 {
     text-align: center;
-    margin: 30px auto 20px;
+    margin: 40px auto 30px;
   }
 
   p {
@@ -28,7 +28,6 @@ export const StyledLoginForm = styled.form`
 
   a {
     text-align: center;
-    margin-bottom: 40px;
   }
 
   p:nth-of-type(2) {
@@ -48,15 +47,27 @@ export const Inputs = styled.div`
     align-items: center;
   }
 
+  div:last-of-type {
+    margin: 20px auto;
+    padding-right: 10px;
+  }
+
   label {
     text-align: center;
   }
 
+  select {
+    margin-left: 10px;
+    width: 120px;
+    border-radius: 5px;
+  }
+
   & input {
-    margin: 2rem;
+    margin: 1rem;
     border: 2px solid ${props => props.theme.colors.medBlue};
     border-radius: 5px;
     color: ${props => props.theme.colors.medBlue};
+    max-width: 180px;
   }
 
   @media (min-width: 640px) {
