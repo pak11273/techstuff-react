@@ -105,5 +105,5 @@ export const ErrorMessage = styled.p`
   color: darkRed;
   text-align: center;
   font-size: 1.5rem;
-  margin: 0 auto 20px;
+  padding-bottom: 20px;
 `;

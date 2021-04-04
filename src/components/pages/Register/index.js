@@ -63,20 +63,20 @@ const Register = props => {
   };
 
   const formSubmit = () => {
-    // const loginSubmit = {
-    //   username: formValues.username.trim(),
-    //   password: formValues.password.trim(),
-    //   email: formValues.email.trim(),
-    //   firstname: formValues.firstname.trim(),
-    //   lastname: formValues.lastname.trim(),
-    //   streetAddress: formValues.streetAddress.trim(),
-    //   city: formValues.city.trim(),
-    //   state: formValues.state.trim(),
-    //   zipcode: formValues.zipcode.trim(),
-    //   role: formValues.role.trim(),
-    // };
-    console.log('VALUES: ', formValues);
-    register(formValues, history);
+    const loginSubmit = {
+      username: formValues.username.trim(),
+      password: formValues.password.trim(),
+      email: formValues.email.trim(),
+      firstname: formValues.firstname.trim(),
+      lastname: formValues.lastname.trim(),
+      streetAddress: formValues.streetAddress.trim(),
+      city: formValues.city.trim(),
+      state: formValues.state.trim(),
+      zipcode: formValues.zipcode.trim(),
+      role: formValues.role.trim(),
+    };
+    console.log('VALUES: ', loginSubmit);
+    register(loginSubmit, history);
   };
 
   useEffect(() => {

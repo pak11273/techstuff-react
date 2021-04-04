@@ -8,11 +8,13 @@ import {
 import React from 'react';
 
 const RegistrationForm = props => {
-  const { values, submit, change, errors } = props;
+  const { values, submit, change, errors, disabled } = props;
+
   const onSubmit = evt => {
     evt.preventDefault();
     submit();
   };
+
   const onChange = evt => {
     const { name, value } = evt.target;
     change(name, value);
@@ -33,8 +35,9 @@ const RegistrationForm = props => {
             values={values.username}
             onChange={onChange}
           />
-          {errors.username && <ErrorMessage>{errors.username}</ErrorMessage>}
         </div>
+        {errors.username && <ErrorMessage>{errors.username}</ErrorMessage>}
+
         <div>
           <label>Password</label>
           <input
@@ -43,8 +46,9 @@ const RegistrationForm = props => {
             values={values.password}
             onChange={onChange}
           />
-          {errors.password && <ErrorMessage>{errors.password}</ErrorMessage>}
         </div>
+        {errors.password && <ErrorMessage>{errors.password}</ErrorMessage>}
+
         <div>
           <label>email</label>
           <input
@@ -53,8 +57,8 @@ const RegistrationForm = props => {
             values={values.email}
             onChange={onChange}
           />
-          {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
         </div>
+        {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
 
         <div>
           <label>First name</label>
@@ -64,8 +68,8 @@ const RegistrationForm = props => {
             values={values.firstname}
             onChange={onChange}
           />
-          {errors.firstname && <ErrorMessage>{errors.firstname}</ErrorMessage>}
         </div>
+        {errors.firstname && <ErrorMessage>{errors.firstname}</ErrorMessage>}
 
         <div>
           <label>Last name</label>
@@ -75,8 +79,8 @@ const RegistrationForm = props => {
             values={values.lastname}
             onChange={onChange}
           />
-          {errors.lastname && <ErrorMessage>{errors.lastname}</ErrorMessage>}
         </div>
+        {errors.lastname && <ErrorMessage>{errors.lastname}</ErrorMessage>}
 
         <div>
           <label>Address</label>
@@ -86,10 +90,10 @@ const RegistrationForm = props => {
             values={values.streetAddress}
             onChange={onChange}
           />
-          {errors.streetAddress && (
-            <ErrorMessage>{errors.streetAddress}</ErrorMessage>
-          )}
         </div>
+        {errors.streetAddress && (
+          <ErrorMessage>{errors.streetAddress}</ErrorMessage>
+        )}
 
         <div>
           <label>City</label>
@@ -99,8 +103,8 @@ const RegistrationForm = props => {
             values={values.city}
             onChange={onChange}
           />
-          {errors.city && <ErrorMessage>{errors.city}</ErrorMessage>}
         </div>
+        {errors.city && <ErrorMessage>{errors.city}</ErrorMessage>}
 
         <div>
           <label>State</label>
@@ -110,18 +114,21 @@ const RegistrationForm = props => {
             values={values.state}
             onChange={onChange}
           />
-          {errors.state && <ErrorMessage>{errors.state}</ErrorMessage>}
         </div>
+        {errors.state && <ErrorMessage>{errors.state}</ErrorMessage>}
+
         <div>
           <label>Zipcode</label>
           <input
-            type="text"
             name="zipcode"
             values={values.zipcode}
             onChange={onChange}
+            type="number"
+            maxLength="5"
           />
-          {errors.zipcode && <ErrorMessage>{errors.zipcode}</ErrorMessage>}
         </div>
+        {errors.zipcode && <ErrorMessage>{errors.zipcode}</ErrorMessage>}
+
         <div>
           <label>Account</label>
           <select values={values.role} name="role" onChange={onChange}>
@@ -129,10 +136,12 @@ const RegistrationForm = props => {
             <option value="renter">Renter</option>
             <option value="owner">Owner</option>
           </select>
-          {errors.role && <ErrorMessage>{errors.role}</ErrorMessage>}
         </div>
+        {errors.role && <ErrorMessage>{errors.role}</ErrorMessage>}
       </Inputs>
-      <ButtonStyled>Sign Up</ButtonStyled>
+      <ButtonStyled className={disabled ? 'disabled' : ''} disabled={disabled}>
+        Sign Up
+      </ButtonStyled>
     </StyledRegistrationForm>
   );
 };

@@ -50,15 +50,15 @@ export const REGISTER_FAILURE = 'REGISTER_FAILURE';
 
 export const register = (registerInfo, history) => dispatch => {
   dispatch({ type: REGISTER_START });
-  axios
-    .post('https://rent-my-tech-stuff.herokuapp.com/api/register', registerInfo)
-    .then(res => {
-      dispatch({ type: REGISTER_SUCCESS, payload: res.data });
-      history.push('/login');
-    })
-    .catch(err => {
-      dispatch({ type: REGISTER_FAILURE });
-    });
+  // axios
+  //   .post('https://rent-my-tech-stuff.herokuapp.com/api/register', registerInfo)
+  //   .then(res => {
+  //     dispatch({ type: REGISTER_SUCCESS, payload: res.data });
+  //     history.push('/login');
+  //   })
+  //   .catch(err => {
+  //     dispatch({ type: REGISTER_FAILURE });
+  //   });
 };
 
 // owner fetches their list of items
