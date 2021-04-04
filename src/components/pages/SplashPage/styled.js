@@ -15,7 +15,7 @@ export const StyledDiv = styled.div`
   }
 
   header {
-    margin: 40px;
+    margin-top: 40px;
     h1 {
       font-weight: 70;
       font-size: 5rem;
@@ -38,7 +38,8 @@ export const StyledDiv = styled.div`
     }
 
     h3 {
-      margin: 20px;
+      margin: 20px auto;
+      text-align: center;
     }
 
     h5 {
@@ -50,6 +51,10 @@ export const StyledDiv = styled.div`
     margin: 30px auto;
     display: flex;
     flex-flow: column wrap;
+    max-width: 240px;
+    p {
+      text-align: center;
+    }
   }
 
   @media (min-width: 600px) {
@@ -60,7 +65,6 @@ export const StyledDiv = styled.div`
 `;
 
 export const StyledLink = styled(Link)`
-  font-family: 'ker ';
   font-size: 2rem;
   color: white;
   text-decoration: none;
@@ -68,4 +72,6 @@ export const StyledLink = styled(Link)`
   border: solid 8px white;
   border-radius: 18%;
   padding: 3%;
+  max-width: 104px;
+  text-align: center;
 `;
