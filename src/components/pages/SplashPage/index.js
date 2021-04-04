@@ -15,7 +15,10 @@ export function SplashPage() {
         </header>
         <section style={{ gridArea: 'body' }}>
           <h3>Tech is expensive</h3>
-          <img src="https://images.unsplash.com/photo-1504890001746-a9a68eda46e2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=979&q=80" />
+          <img
+            alt="high tech equipment"
+            src="https://images.unsplash.com/photo-1504890001746-a9a68eda46e2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=979&q=80"
+          />
           <h3>Rent it!</h3>
         </section>
         <section className="callouts" style={{ gridArea: 'callout' }}>

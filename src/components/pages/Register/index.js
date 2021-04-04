@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
-import registrationSchema from "./RegistrationSchema";
-import RegistrationForm from "./RegistrationForm";
-import * as yup from "yup";
-import styled from "styled-components";
+import * as yup from 'yup';
 
-import { connect } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { register } from "../actions";
+import React, { useEffect, useState } from 'react';
+
+import RegistrationForm from './RegistrationForm';
+import { connect } from 'react-redux';
+import { register } from 'actions';
+import registrationSchema from './RegistrationSchema';
+import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
 //styling start
 const StyledDiv = styled.div`
@@ -21,7 +22,7 @@ const StyledBackgroundImg = styled.div`
       rgba(255, 0, 195, 0.3),
       rgba(255, 0, 195, 0.3)
     ),
-    url(${(props) => props.imageUrl});
+    url(${props => props.imageUrl});
   position: relative;
   height: 100%;
   background-position: center 40px;
@@ -33,36 +34,36 @@ const StyledBackgroundImg = styled.div`
 //styling end
 
 const initialFormValues = {
-  username: "",
-  password: "",
-  email: "",
-  firstname: "",
-  lastname: "",
-  streetAddress: "",
-  city: "",
-  state: "",
-  zipcode: "",
+  username: '',
+  password: '',
+  email: '',
+  firstname: '',
+  lastname: '',
+  streetAddress: '',
+  city: '',
+  state: '',
+  zipcode: '',
   //radio button
-  role: "",
+  role: '',
 };
 
 const initialFormErrors = {
-  username: "",
-  password: "",
-  email: "",
-  firstname: "",
-  lastname: "",
-  streetAddress: "",
-  city: "",
-  state: "",
-  zipcode: "",
+  username: '',
+  password: '',
+  email: '',
+  firstname: '',
+  lastname: '',
+  streetAddress: '',
+  city: '',
+  state: '',
+  zipcode: '',
   //dropdown
-  role: "",
+  role: '',
 };
 
 const initialDisabled = true;
 
-const Register = (props) => {
+const Register = props => {
   let { register } = props;
   const history = useHistory();
   const [formValues, setFormValues] = useState(initialFormValues);
@@ -74,9 +75,9 @@ const Register = (props) => {
       .reach(registrationSchema, name)
       .validate(value)
       .then(() => {
-        setFormErrors({ ...formErrors, [name]: "" });
+        setFormErrors({ ...formErrors, [name]: '' });
       })
-      .catch((err) => {
+      .catch(err => {
         setFormErrors({ ...formErrors, [name]: err.errors[0] });
       });
     setFormValues({
@@ -86,24 +87,24 @@ const Register = (props) => {
   };
 
   const formSubmit = () => {
-    const loginSubmit = {
-      username: formValues.username.trim(),
-      password: formValues.password.trim(),
-      email: formValues.email.trim(),
-      firstname: formValues.firstname.trim(),
-      lastname: formValues.lastname.trim(),
-      streetAddress: formValues.streetAddress.trim(),
-      city: formValues.city.trim(),
-      state: formValues.state.trim(),
-      zipcode: formValues.zipcode.trim(),
-      role: formValues.role.trim(),
-    };
-    console.log(formValues);
+    // const loginSubmit = {
+    //   username: formValues.username.trim(),
+    //   password: formValues.password.trim(),
+    //   email: formValues.email.trim(),
+    //   firstname: formValues.firstname.trim(),
+    //   lastname: formValues.lastname.trim(),
+    //   streetAddress: formValues.streetAddress.trim(),
+    //   city: formValues.city.trim(),
+    //   state: formValues.state.trim(),
+    //   zipcode: formValues.zipcode.trim(),
+    //   role: formValues.role.trim(),
+    // };
+    console.log('VALUES: ', formValues);
     register(formValues, history);
   };
 
   useEffect(() => {
-    registrationSchema.isValid(formValues).then((valid) => setDisabled(!valid));
+    registrationSchema.isValid(formValues).then(valid => setDisabled(!valid));
   }, [formValues]);
 
   return (
@@ -121,7 +122,7 @@ const Register = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return { user: state.user, message: state.message };
 };
 

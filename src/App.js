@@ -13,7 +13,8 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 import ProtectedRoute from './components/common/ProtectedRoute';
 import { Provider } from 'react-redux';
 import React from 'react';
-import { SplashPage } from 'components/common';
+import { Register } from 'components/pages';
+import { SplashPage } from 'components/pages';
 import { ThemeProvider } from 'styled-components';
 import logger from 'redux-logger';
 import storage from 'redux-persist/lib/storage';
@@ -24,7 +25,6 @@ import thunk from 'redux-thunk';
 
 // import Profile from './components/Profile';
 
-// import Register from './components/Register';
 // import RenterHome from './components/RenterHome';
 
 // import NavBar from './components/NavBar';
@@ -36,6 +36,7 @@ import thunk from 'redux-thunk';
 const persistConfig = {
   key: 'root',
   storage,
+  blacklist: ['message'],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducer);
@@ -70,7 +71,8 @@ function App() {
               <ProtectedRoute exact path="/userinfo" component={GetUserInfo} />
               <Route component={NotFoundPage} />
               <Route path="/login" component={Login} />
-              {/* <Route path="/register" component={Register} />
+              <Route path="/register" component={Register} />
+              {/*
             <Route path="/profile" component={Profile} />
             <Route path="/owner-home" component={OwnerHome} />
             <Route path="/renter-home" component={RenterHome} /> */}

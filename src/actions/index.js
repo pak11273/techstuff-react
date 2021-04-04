@@ -8,10 +8,28 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 
 export const login = credentials => dispatch => {
   dispatch({ type: LOGIN_START });
+  // OAUTH2 -> if you are using java backend
+  //   axios
+  //     // .post(
+  //     //   process.env.NODE_ENV === 'production'
+  //     //     ? 'https://web39mytechstuff.herokuapp.com/api/login'
+  //     //     : 'http://localhost:2019/api/login',
+  //     //   `grant_type=password&username=${credentials.username}&password=${credentials.password}`,
+  //     .post(
+  //       'https://web39mytechstuff.herokuapp.com/api/login',
+  //       `grant_type=password&username=${credentials.username}&password=${credentials.password}`,
+  //       {
+  //         headers: {
+  //           // btoa is converting our client id/client secret into base64
+  //           Authorization: `Basic ${btoa('lambda-client:lambda-secret')}`,
+  //           'Content-Type': 'application/x-www-form-urlencoded',
+  //         },
+  //       }
   axios
     .post('https://rent-my-tech-stuff.herokuapp.com/api/login', credentials)
     .then(res => {
       dispatch({ type: LOGIN_SUCCESS, payload: res.data });
+      // props.history.push('/userinfo');
     })
     .catch(err => {
       dispatch({ type: LOGIN_FAILURE });

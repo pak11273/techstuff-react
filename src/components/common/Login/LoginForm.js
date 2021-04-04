@@ -1,59 +1,99 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import styled from 'styled-components';
 
-//styling start
 const StyledDiv = styled.div`
   background-color: white;
-  border-radius: 20%20%;
+  border-radius: 20%;
   opacity: 0.7;
+  padding: 20px;
   width: 60%;
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: ${props => props.theme.colors.medBlue};
+  min-width: 230px;
+  max-width: 420px;
 `;
 
 const StyledLoginForm = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   font-size: 2rem;
-  font-family: 'Blinker' sans-serif;
+  margin-bottom: 40px;
+
+  h1 {
+    margin: 30px auto 20px;
+  }
+
+  p {
+    text-align: center;
+    margin-bottom: 0px;
+  }
+
+  p:nth-of-type(2) {
+    margin-bottom: 20px;
+  }
 `;
 
 const Inputs = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   & input {
-    font-family: 'Blinker' sans-serif;
-    margin: 1rem 2rem 2rem 2rem;
+    margin: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    div {
+      flex-direction: row;
+    }
   }
 `;
+
 const ButtonStyled = styled.button`
-  width: 30%;
-  margin: 3rem 1rem 3rem 1rem;
+  margin: 1rem 1rem 3rem 1rem;
   padding: 0.8rem;
   align-self: center;
   font-size: 1.4rem;
-  font-family: 'Blinker' sans-serif;
-  border: solid 5px #6943d5;
+  border: solid 5px ${props => props.theme.colors.medBlue};
   border-radius: 20%20%;
-  color: #6943d5;
+  color: ${props => props.theme.colors.medBlue};
+  &:hover {
+    background: ${props => props.theme.colors.darkBlue};
+    color: white;
+    cursor: pointer;
+  }
+  &:disabled:hover {
+    cursor: not-allowed;
+  }
 `;
+
 const ErrorMessage = styled.p`
-  margin-top: 0;
   color: darkRed;
-  font-size: 0.8rem;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 0 auto 20px;
 `;
-//styling end
 
 const LoginForm = props => {
   const { values, submit, change, disabled, errors } = props;
   const onSubmit = evt => {
     evt.preventDefault();
+    evt.persist();
     submit();
   };
+
   const onChange = evt => {
     const { name, value } = evt.target;
     change(name, value);
@@ -61,40 +101,41 @@ const LoginForm = props => {
 
   return (
     <StyledDiv>
-      <style>
-        @import
-        url('https://fonts.googleapis.com/css2?family=B612+Mono&display=swap');
-      </style>
-
       <StyledLoginForm className="loginFormContainer" onSubmit={onSubmit}>
         <h1>Login</h1>
+        <p>demo account: testOwner</p>
+        <p>password: test123</p>
         <Inputs>
-          <label>
-            {' '}
-            Username
+          <div>
+            <label>Username</label>
             <input
               type="text"
               name="username"
               values={values.username}
               onChange={onChange}
             />
-          </label>
+          </div>
           {errors.username && <ErrorMessage>{errors.username}</ErrorMessage>}
 
-          <label>
-            {' '}
-            Password
+          <div>
+            <label>Password</label>
             <input
               type="password"
               name="password"
               values={values.password}
               onChange={onChange}
             />
-          </label>
+          </div>
+          {errors.password && <ErrorMessage>{errors.password}</ErrorMessage>}
         </Inputs>
-        {errors.password && <ErrorMessage>{errors.password}</ErrorMessage>}
 
-        <ButtonStyled disabled={disabled}>Log In </ButtonStyled>
+        <ButtonStyled
+          className={disabled ? 'disabled' : ''}
+          disabled={disabled}
+        >
+          Log In{' '}
+        </ButtonStyled>
+        <Link to="/register">Need an account?</Link>
       </StyledLoginForm>
     </StyledDiv>
   );

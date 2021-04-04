@@ -52,7 +52,7 @@ const ErrorMessage = styled.p`
 //styling end
 
 const RegistrationForm = props => {
-  const { values, submit, change, errors, disabled } = props;
+  const { values, submit, change, errors } = props;
   const onSubmit = evt => {
     evt.preventDefault();
     submit();
