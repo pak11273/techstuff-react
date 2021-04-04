@@ -4,10 +4,11 @@ import styled from 'styled-components';
 export const StyledDiv = styled.div`
   background: url('https://i.pinimg.com/736x/7f/99/cb/7f99cbd17100174bb26d9433e7ed1388.jpg')
     no-repeat center/cover;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   margin: 0;
   color: white;
+  overflow: hidden;
 
   .avoidwrap {
     display: inline-block;

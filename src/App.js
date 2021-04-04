@@ -8,7 +8,6 @@ import { persistReducer, persistStore } from 'redux-persist';
 import { ExampleListPage } from './components/pages/ExampleList';
 import GetUserInfo from './components/common/UserInfo';
 import { GlobalStyle } from 'theme/GlobalStyle';
-import { LandingPage } from './components/pages/Landing';
 import Login from './components/common/Login';
 import { NotFoundPage } from './components/pages/NotFound';
 import { PersistGate } from 'redux-persist/lib/integration/react';
@@ -64,16 +63,12 @@ function App() {
             <Switch>
               {/* <NavBar /> */}
               <Route exact path="/" component={SplashPage} />
-              <Route path="/landing" component={LandingPage} />
-              {/* any of the routes you need secured should be registered as SecureRoutes */}
-              <Route path="/" exact component={() => <LandingPage />} />
+              <Route exact path="/login" component={Login} />
+              <Route path="/register" component={Register} />
               <Route path="/example-list" component={ExampleListPage} />
               <Route path="/rentals/rentals" component={ExampleListPage} />
-              <Route exact path="/login" component={Login} />
               <ProtectedRoute exact path="/userinfo" component={GetUserInfo} />
               <Route component={NotFoundPage} />
-              <Route path="/login" component={Login} />
-              <Route path="/register" component={Register} />
               {/*
             <Route path="/profile" component={Profile} />
             <Route path="/owner-home" component={OwnerHome} />

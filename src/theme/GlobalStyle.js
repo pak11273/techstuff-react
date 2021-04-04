@@ -136,6 +136,7 @@ const global = css`
     font-family: 'Blinker', sans-serif;
     box-sizing: border-box;
     max-width: 100%;
+    width: 100%;
   }
 
   html {
