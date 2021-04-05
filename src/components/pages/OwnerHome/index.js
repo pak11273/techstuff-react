@@ -1,28 +1,28 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import OwnerHomeForm from "./OwnerHomeForm";
-import styled from "styled-components";
-import { connect } from "react-redux";
+import { AddItem, Container } from './styled';
+import { ItemCard, StyledCard } from 'components/common/Card/ItemCard';
+import React, { useEffect, useState } from 'react';
 import {
-  ownerFetchData,
-  ownerSelectItem,
-  ownerChangeItem,
-  ownerNewItem,
   ownerAddItem,
-  ownerDeleteItem,
   ownerCancel,
-} from "../actions";
+  ownerChangeItem,
+  ownerDeleteItem,
+  ownerFetchData,
+  ownerNewItem,
+  ownerSelectItem,
+} from 'actions';
 
-//styling start
-const StyledPost = styled.div``;
-//styling end
+import { OwnerGrid } from 'components/common';
+import OwnerHomeForm from './OwnerHomeForm';
+import { StyledDiv } from '../SplashPage/styled';
+import { connect } from 'react-redux';
+import styled from 'styled-components';
 
 const initialFormValues = {
-  name: "",
-  category: "",
-  price_per_day: "",
-  rental_period: "",
-  description: "",
+  name: '',
+  category: '',
+  price_per_day: '',
+  rental_period: '',
+  description: '',
 };
 
 function OwnerHome(props) {
@@ -150,52 +150,48 @@ function OwnerHome(props) {
   //   }, [formValues])
 
   return (
-    <div className="owner-container">
-      <h1>Owner Home</h1>
-      {message}
-
-      <button className="addButton" onClick={() => ownerNewItem()}>
-        Add New Item
-      </button>
-
-      <h2>
-        {isAdding && "Add Item"}
-        {isEditing && "Edit Item"}
-      </h2>
-      {isAdding || isEditing ? (
-        <div>
-          <OwnerHomeForm
-            values={formValues}
-            setFormValues={setFormValues}
-            submit={submit}
-          />
-          <button onClick={() => ownerCancel()}>Cancel</button>
-        </div>
-      ) : null}
-      {/* {isAdding ? HideButton : null} */}
-
-      {items.map((post, i) => (
-        <div className="post-container" key={i}>
-          <h2>{post.name}</h2>
-          <p>{post.category}</p>
-          <p>{post.description}</p>
-          <p>{post.price_per_day}</p>
-          <p>{post.rental_period}</p>
-
-          <button onClick={() => ownerSelectItem(post.item_id)}>
-            Edit Item
+    <StyledDiv>
+      <Container>
+        <h1 style={{ gridArea: 'title' }}>Your listed equipment</h1>
+        {message}
+        <AddItem>
+          <button
+            style={{ gridArea: 'button' }}
+            className="addButton"
+            onClick={() => ownerNewItem()}
+          >
+            Add New Item
           </button>
 
-          <button onClick={() => ownerDeleteItem(post.item_id)}>
-            Delete Item
-          </button>
-        </div>
-      ))}
-    </div>
+          <h2>
+            {isAdding && 'Add Item'}
+            {isEditing && 'Edit Item'}
+          </h2>
+          {isAdding || isEditing ? (
+            <div>
+              <OwnerHomeForm
+                values={formValues}
+                setFormValues={setFormValues}
+                submit={submit}
+              />
+              <button onClick={() => ownerCancel()}>Cancel</button>
+            </div>
+          ) : null}
+          {/* {isAdding ? HideButton : null} */}
+          {/* <div> */}
+        </AddItem>
+
+        <OwnerGrid>
+          {items.map((post, i) => (
+            <ItemCard style={{ gridArea: 'card' }} post={post} key={i} />
+          ))}
+        </OwnerGrid>
+      </Container>
+    </StyledDiv>
   );
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     message: state.message,
     items: state.items,

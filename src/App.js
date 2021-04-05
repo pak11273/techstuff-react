@@ -1,5 +1,6 @@
 import './App.css';
 
+import { OwnerHome, Register, SplashPage } from 'components/pages';
 import { Route, Switch } from 'react-router-dom';
 import { applyMiddleware, createStore } from 'redux';
 import { initialState, reducer } from './reducer';
@@ -14,15 +15,11 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 import ProtectedRoute from './components/common/ProtectedRoute';
 import { Provider } from 'react-redux';
 import React from 'react';
-import { Register } from 'components/pages';
-import { SplashPage } from 'components/pages';
 import { ThemeProvider } from 'styled-components';
 import logger from 'redux-logger';
 import storage from 'redux-persist/lib/storage';
 import { theme } from 'theme/theme.js';
 import thunk from 'redux-thunk';
-
-// import OwnerHome from './components/OwnerHome';
 
 // import Profile from './components/Profile';
 
@@ -68,12 +65,11 @@ function App() {
               <Route path="/example-list" component={ExampleListPage} />
               <Route path="/rentals/rentals" component={ExampleListPage} />
               <ProtectedRoute exact path="/userinfo" component={GetUserInfo} />
-              <Route component={NotFoundPage} />
-              {/*
-            <Route path="/profile" component={Profile} />
-            <Route path="/owner-home" component={OwnerHome} />
-            <Route path="/renter-home" component={RenterHome} /> */}
+              <Route path="/owner-home" component={OwnerHome} />
+              {/* <Route path="/profile" component={Profile} /> */}
+              {/* <Route path="/renter-home" component={RenterHome} /> */}
               {/* <Route path="/item" component={ItemPage} /> */}
+              <Route component={NotFoundPage} />
             </Switch>
           </PersistGate>
         </ThemeProvider>
