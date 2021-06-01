@@ -1,5 +1,4 @@
 import { AddItem, Container } from './styled';
-import { ItemCard, StyledCard } from 'components/common/Card/ItemCard';
 import React, { useEffect, useState } from 'react';
 import {
   ownerAddItem,
@@ -11,11 +10,11 @@ import {
   ownerSelectItem,
 } from 'actions';
 
+import { ItemCard } from 'components/common/Card/ItemCard';
 import { OwnerGrid } from 'components/common';
 import OwnerHomeForm from './OwnerHomeForm';
 import { StyledDiv } from '../SplashPage/styled';
 import { connect } from 'react-redux';
-import styled from 'styled-components';
 
 const initialFormValues = {
   name: '',
@@ -39,11 +38,11 @@ function OwnerHome(props) {
     isAdding,
     needToFetch,
     ownerFetchData,
-    ownerSelectItem,
+    // ownerSelectItem,
     ownerChangeItem,
     ownerNewItem,
     ownerAddItem,
-    ownerDeleteItem,
+    // ownerDeleteItem,
     ownerCancel,
   } = props;
 
@@ -63,7 +62,7 @@ function OwnerHome(props) {
     if (needToFetch) {
       ownerFetchData();
     }
-  }, [needToFetch]);
+  }, [needToFetch, ownerFetchData]);
 
   // const Add = () => {
   //   setIsAdding(!isAdding)
@@ -114,27 +113,27 @@ function OwnerHome(props) {
   //   .then(res => console.log(res.data));
   //     }
 
-  const inputChange = (name, value) => {
-    console.log(formValues);
-    // yup.reach(name)
-    //   .validate(value)
-    //   .then(() => {
-    //     setFormErrors({...formErrors, [name]: ''})
-    //   })
-    //   .catch(err => {
-    //     setFormErrors({...formErrors, [name]: err.errors[0]})
-    //   })
-    setFormValues({
-      ...formValues,
-      [name]: value,
-    });
-  };
+  // const inputChange = (name, value) => {
+  //   console.log(formValues);
+  //   // yup.reach(name)
+  //   //   .validate(value)
+  //   //   .then(() => {
+  //   //     setFormErrors({...formErrors, [name]: ''})
+  //   //   })
+  //   //   .catch(err => {
+  //   //     setFormErrors({...formErrors, [name]: err.errors[0]})
+  //   //   })
+  //   setFormValues({
+  //     ...formValues,
+  //     [name]: value,
+  //   });
+  // };
 
-  const HideButton = styled.div`
-    .addButton {
-      display: none;
-    }
-  `;
+  // const HideButton = styled.div`
+  //   .addButton {
+  //     display: none;
+  //   }
+  // `;
 
   const submit = () => {
     if (isEditing) {
