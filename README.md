@@ -1,8 +1,10 @@
 # Rent My Tech Stuff
 
+## Can't afford to buy the latest tech? Never fear. Rent your tech here. Or make some pocket money by renting your own equipment.
+
 # frontend
 
-You can find the deployed project at [Rent My Tech Stuff ](https://rent-my-tech-stuff.vercel.app/).
+You can find the deployed project at [Rent My Tech Stuff ](https://techstuff-react-eygsmq063-pak11273.vercel.app/).
 
 # Product Vision Document
 
@@ -15,10 +17,10 @@ You can find the deployed project at [Rent My Tech Stuff ](https://rent-my-tech-
     <td align="center"><a href="https://github.com/nickcabuno"><img src="https://avatars.githubusercontent.com/u/76980877?v=4" width="100px;" alt=""/><br /><sub><b>Nick Abuno</b></sub></a><br /><a href="https://github.com/nickcabuno"><img src="https://github.com/favicon.ico" width="15"></a>&nbsp;<a href="https://www.linkedin.com/in/nickcabuno"><img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"></a></td>
 <td align="center"><a href="https://github.com/katehunnicutt"><img src="https://avatars.githubusercontent.com/u/77248823?v=4" width="100px;" alt=""/><br /><sub><b>kate hunnicutt</b></sub></a><br /><a href="https://github.com/katehunnicutt"><img src="https://github.com/favicon.ico" width="15"></a>&nbsp;<a href="https://www.linkedin.com/in/katehunnicutt/"><img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"></a></td>
 <td align="center"><a href="https://github.com/roerark"><img src="https://avatars.githubusercontent.com/u/73914929?v=4" width="100px;" alt=""/><br /><sub><b>Joe Park</b></sub></a><br /><a href="https://github.com/xpeedy"><img src="https://github.com/favicon.ico" width="15"></a>&nbsp;<a href="https://www.linkedin.com/in/roerark"><img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"></a></td>
-<td align="center"><a href="https://www.linkedin.com/in/stephanieenciso/"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQHDayFlZOzjqg/profile-displayphoto-shrink_400_400/0/1605632211774?e=1618444800&v=beta&t=uStT0oGhfj3D9hqzaDbwLT2FOvgSbWO_bPlsl80pRpU" width="100px;" alt=""/><br /><sub><b>Stephanie Enciso</b></sub></a><br /><a href="https://www.linkedin.com/in/stephanieenciso/"><img src="https://github.com/favicon.ico" width="15"></a>&nbsp;<a href="https://www.linkedin.com/in/stephanieenciso/"><img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"></a></td>
+<td align="center"><a href="https://www.linkedin.com/in/stephanieenciso/"><img src="https://avatars.githubusercontent.com/u/73484758?v=4" width="100px;" alt=""/><br /><sub><b>Stephanie Enciso</b></sub></a><br /><a href="https://github.com/StephanieEnciso"><img src="https://github.com/favicon.ico" width="15"></a>&nbsp;<a href="https://www.linkedin.com/in/stephanieenciso/"><img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"></a></td>
 <td align="center"><a href="https://github.com"><img src="https://avatars.githubusercontent.com/u/49249813?v=4" width="100px;" alt=""/><br /><sub><b>Lyubomyr Kovbel</b></sub></a><br /><a href="https://github.com/crispysandwhich"><img src="https://github.com/favicon.ico" width="15"></a>&nbsp;<a href="https://linkedin.com"><img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"></a></td>
 <td align="center"><a href="https://github.com/taylorfriesen6"><img src="https://avatars.githubusercontent.com/u/77222397?v=4" width="100px;" alt=""/><br /><sub><b>Taylor Friesen</b></sub></a><br /><a href="https://github.com/taylorfriesen6"><img src="https://github.com/favicon.ico" width="15"></a>&nbsp;<a href="https://www.linkedin.com/in/"><img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"></a></td>
-<td align="center"><a href="https://github.com/pak11273"><img src="https://media-exp1.licdn.com/dms/image/C4D03AQHEMEd21bW1CQ/profile-displayphoto-shrink_400_400/0/1606151035662?e=1618444800&v=beta&t=xcZdZpmXL-3QFjC_CkRDCjPSN5oSDNwxlM-Vz_0OY6w" width="100px;" alt=""/><br /><sub><b>Isaac Pak</b></sub></a><br /><a href="https://github.com/pak11273"><img src="https://github.com/favicon.ico" width="15"></a>&nbsp;<a href="https://www.linkedin.com/in/isaac-pak-78b72687/"><img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"></a></td>
+<td align="center"><a href="https://github.com/pak11273"><img src="https://avatars.githubusercontent.com/u/2309184?v=4" width="100px;" alt=""/><br /><sub><b>Isaac Pak</b></sub></a><br /><a href="https://github.com/pak11273"><img src="https://github.com/favicon.ico" width="15"></a>&nbsp;<a href="https://www.linkedin.com/in/isaac-pak-78b72687/"><img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"></a></td>
 </tr>
 
 <br>

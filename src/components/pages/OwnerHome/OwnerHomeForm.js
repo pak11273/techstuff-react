@@ -1,6 +1,4 @@
-import { Link } from 'react-router-dom';
 import React from 'react';
-import styled from 'styled-components';
 
 export default function OwnerHomeForm(props) {
   const { values, submit, setFormValues } = props;

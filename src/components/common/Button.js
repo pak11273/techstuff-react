@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 const Button = props => {
   // Here is a button for use when simply in need of a button that doesn't require to be wrapped in a form.

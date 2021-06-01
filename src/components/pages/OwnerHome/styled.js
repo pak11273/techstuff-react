@@ -2,10 +2,12 @@ import styled from 'styled-components';
 
 export const AddItem = styled.div`
   width: 300px;
+  text-align: center;
   margin: 40px auto;
 `;
 
 export const Container = styled.div`
+  min-height: 100vh;
   width: 100%;
 
   h1 {
