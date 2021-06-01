@@ -6,6 +6,14 @@
 
 You can find the deployed project at [Rent My Tech Stuff ](https://techstuff-react-eygsmq063-pak11273.vercel.app/).
 
+<br />
+<hr />
+<h2>To demo the features use</h2>
+<p>username: admin 
+<p>password: password
+<hr />
+<br />
+
 # Product Vision Document
 
 [link to PVD](https://docs.google.com/document/d/1GenCLHKL8uin8f87p8cNLFjG7pMf3KSwdbHlqeVaHXo/edit)
@@ -42,14 +50,6 @@ You can find the deployed project at [Rent My Tech Stuff ](https://techstuff-rea
 - You can create, read, update, and delete your rentals
 
 #### Front end deployed to `vercel`
-
-<br />
-<hr />
-<h2>To demo the features use</h2>
-<p>username: admin 
-<p>password: password
-<hr />
-<br />
 
 #### [Back end](https://rent-my-tech-stuff.herokuapp.com) built using: `heroku`
 
